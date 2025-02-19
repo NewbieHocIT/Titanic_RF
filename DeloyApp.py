@@ -13,12 +13,12 @@ import numpy as np
 
 
 # Đọc dữ liệu đã xử lý
-X_train = pd.read_csv("processed_data/X_train.csv")
-X_valid = pd.read_csv("processed_data/X_valid.csv")
-X_test = pd.read_csv("processed_data/X_test.csv")
-y_train = pd.read_csv("processed_data/y_train.csv").squeeze()
-y_valid = pd.read_csv("processed_data/y_valid.csv").squeeze()
-y_test = pd.read_csv("processed_data/y_test.csv").squeeze()
+X_train = pd.read_csv("X_train.csv")
+X_valid = pd.read_csv("X_valid.csv")
+X_test = pd.read_csv("X_test.csv")
+y_train = pd.read_csv("y_train.csv").squeeze()
+y_valid = pd.read_csv("y_valid.csv").squeeze()
+y_test = pd.read_csv("y_test.csv").squeeze()
 
 # Cấu hình MLflow
 mlflow.set_experiment("RandomForest_Classification")
@@ -228,7 +228,7 @@ def main():
         st.subheader("💡 Model Performance")
 
         # Load model
-        model = load("models/random_forest.pkl")
+        model = load("random_forest.pkl")
 
         # Hiển thị form nhập liệu ngay trong tab, không dùng sidebar
         st.subheader("🔢 Nhập Thông Tin Hành Khách")
